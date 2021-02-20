@@ -1,0 +1,15 @@
+- hosts: q01.sys
+  vars: 
+    
+      lnx_install_date: 28
+      lnx_new01: 01
+      lnx_php_installed_version: 2.0.8
+  tasks:
+    - include_role:
+          name: wordpress
+      vars:
+        set: yes
+        json_variables:
+            lnx_install_date: "{{ lnx_install_date }}"
+            lnx_php_installed_version: "{{ lnx_php_installed_version }}"
+            lnx_new01: "{{ lnx_new01 }}"
